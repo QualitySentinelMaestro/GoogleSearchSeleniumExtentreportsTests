@@ -8,16 +8,17 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features", // Path to your feature files
-        glue = "com.org.trustpayments.stepdefinitions", // Package name where your step definitions are located
-        plugin = { "pretty", "html:target/site/cucumber-pretty/cucumberreport.html"},
-
+        features = "src/test/resources/features", // Path to  feature files
+        glue = "com.org.trustpayments.stepdefinitions", // Package name where step definitions are located
+        plugin = { "pretty", "json:target/cucumberreport.json" ,"pretty",
+                "html:target/site/cucumber-pretty/cucumberreport.html",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         monochrome = true,
         dryRun = false,
-        tags = "@sample"
+        tags = "@ValidateZDNet"
 )
 public class TestRunner {
 
-    }
+}
 
 

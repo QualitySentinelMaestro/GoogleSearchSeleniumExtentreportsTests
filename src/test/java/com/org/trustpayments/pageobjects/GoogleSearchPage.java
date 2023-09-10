@@ -1,4 +1,7 @@
 package com.org.trustpayments.pageobjects;
+/**
+ * This is the page object class for Google Website Search page
+ */
 
 import com.org.trustpayments.helper.WaitHelper;
 import com.org.trustpayments.helper.JavascriptHelper;
@@ -34,14 +37,12 @@ public class GoogleSearchPage {
         searchBoxLocatorelt.clear();
         searchBoxLocatorelt.sendKeys(searchPhrase);
         searchBoxLocatorelt.submit();
-
     }
 
     public void clickLink(String linkText) {
 
         LOGGER.info("Clicking and navigating to Zdnet Link");
         JavascriptHelper.scrollAndClick(driver);
-
 
     }
 }

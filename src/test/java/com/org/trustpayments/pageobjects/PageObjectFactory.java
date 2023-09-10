@@ -1,24 +1,31 @@
 package com.org.trustpayments.pageobjects;
+/**
+ * This is the Pageobject fcatory class to instatntiate all the
+ * Page Objects
+ * @author Lakshmi
+ *
+ */
 
-// PageObjectFactory.java
+import lombok.Data;
 import org.openqa.selenium.WebDriver;
 
+@Data
 public class PageObjectFactory {
-    private WebDriver driver;
+
+
+     private WebDriver driver;
+     GoogleSearchPage googleSearchPage;
+     ZDNetPage zDNetPage;
+     AWSLandingPage awsLandingPage;
+
 
     public PageObjectFactory(WebDriver driver) {
         this.driver = driver;
+        googleSearchPage = new GoogleSearchPage(driver);
+        zDNetPage = new ZDNetPage(driver);
+        awsLandingPage = new AWSLandingPage(driver);
+
     }
 
-    public GoogleSearchPage createGoogleSearchPage() {
-        return new GoogleSearchPage(driver);
-    }
 
-    public ZDNetPage createZDNetPage() {
-        return new ZDNetPage(driver);
-    }
-
-    public AWSLandingPage createAWSLandingPage() {
-        return new AWSLandingPage(driver);
-    }
 }

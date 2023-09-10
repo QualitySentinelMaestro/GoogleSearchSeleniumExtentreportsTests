@@ -1,3 +1,8 @@
+/***********************************************************************************************************************************
+ * This is a helper class which has all javascript methods which can be used on webelements on the page.
+ * @author : Lakshmi Ay
+ ***********************************************************************************************************************************************************************************/
+
 package com.org.trustpayments.helper;
 
 import org.openqa.selenium.By;
@@ -42,7 +47,7 @@ public class JavascriptHelper {
         WebElement secondPageLink = driver.findElement(By.xpath("//a[@aria-label='Page 2']"));
         secondPageLink.click();
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         boolean zdnetFound = false;
         while (!zdnetFound) {
@@ -69,4 +74,5 @@ public class JavascriptHelper {
 
 
     }
+
 }
